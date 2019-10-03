@@ -98,7 +98,7 @@ int arrow(char player1[10], char player2[10]){
 			 }
 	       break;
 	    case DOWN_ARROW: i++; 
-	   	  if(i>2) i == 2;
+	   	  if(i>2) i--;
 	   	  	 if(square[i][j] == NULL){
 				 square[i][j] = MARK;
 				 board(player1, player2);
@@ -109,7 +109,7 @@ int arrow(char player1[10], char player2[10]){
 			 }
 	       break;
 	    case LEFT_ARROW: j--; 
-	   	  if(j<0) j == 0; 
+	   	  if(j<0) j++; 
 	   	  	 if(square[i][j] == NULL){
 				 square[i][j] = MARK;
 				 board(player1, player2);
@@ -120,7 +120,7 @@ int arrow(char player1[10], char player2[10]){
 			 }
  	       break;
  	    case RIGHT_ARROW: j++;
- 	  	  if(j>2) j == 2; 
+ 	  	  if(j>2) j--; 
  	  	  	 if(square[i][j] == NULL){
 				 square[i][j] = MARK;
 				 board(player1, player2);
