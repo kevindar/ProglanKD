@@ -54,18 +54,7 @@ void console(){
 	        printf(BLUE"%s", str);
 	    fclose(fp);
 	    printf(RESET);
-	    
-	    gotoxy(46,26);
-	    printf(YELLOW "%c"RESET, mark);
-	    
-	    gotoxy(51,26);
-	    printf(GREEN "%c"RESET, mark);
-	    
-	    gotoxy(63,26);
-	    printf(RED "%c"RESET, mark);
-	    
-	    gotoxy(68,26);
-	    printf(CYAN "%c"RESET, mark);
+
 	    
 }
 

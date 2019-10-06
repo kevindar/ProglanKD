@@ -1,10 +1,13 @@
 
 #include <stdio.h>
 #include <windows.h>
+#include <conio.h>
 
 #include "splash.h"
 #include "layout.h"
 #include "checkwin.h"
+#include "beep.h"
+
 
 #define ENTER 13
 #define ESCAPE 27
@@ -19,8 +22,7 @@
 #define ALT 224
 #define MARK 254
 
-
-char sel[2][1];
+char op[2];
 char square[3][3];
 char player1[10];
 char player2[10];
@@ -40,13 +42,14 @@ int main(){
 	hidecursor();
 	splashscreen();
 	showcursor();
-	game();
+//	game();
 
 }
 
 
 int game(){
 	
+	getch();
 	gotoxy(75,5); printf("Enter Player 1 name: ");
 	scanf("%s", player1);
 	gotoxy(75,6); printf("Enter Player 2 name: ");
@@ -64,36 +67,37 @@ COORD xy = {0,0};
 
 int board(char player1[10], char player2[10]){
 	
-	gotoxy(52,5); printf("Tic Tac Toe");
-	gotoxy(45,6); printf("Permainan Jadul Sejak 1884");
-	gotoxy(54,21); printf("%s (X)", player1);
-	gotoxy(54,23); printf("%s (O)", player2);
+	gotoxy(99,10); printf("Tic Tac Toe");
+	gotoxy(92,11); printf("Permainan Jadul Sejak 1884");
+	gotoxy(102,27); printf("%s (X)", player1);
+	gotoxy(105, 28); printf("vs");
+	gotoxy(102,29); printf("%s (O)", player2);
 
-	gotoxy(50,9); printf("     |     |     \n");
-    gotoxy(50,10); printf("  %c  |  %c  |  %c \n", square[0][0], square[0][1], square[0][2]);
+	gotoxy(97,14); printf("     |     |     \n");
+    gotoxy(97,15); printf("  %c  |  %c  |  %c \n", square[0][0], square[0][1], square[0][2]);
 
 
-    gotoxy(50,11); printf("_____|_____|_____\n");
-    gotoxy(50,12); printf("     |     |     \n");
-
-    gotoxy(50,13); printf("  %c  |  %c  |  %c \n", square[1][0], square[1][1], square[1][2]);
-
-    gotoxy(50,14); printf("_____|_____|_____\n");
-    gotoxy(50,15); printf("     |     |     \n");
-
-    gotoxy(50,16); printf("  %c  |  %c  |  %c \n", square[2][0], square[2][1], square[2][2]);
-    gotoxy(50,17); printf("     |     |     \n\n");
+    gotoxy(97,16); printf("_____|_____|_____\n");
+    gotoxy(97,17); printf("     |     |     \n");
     
-    	gotoxy(46,26);
+    gotoxy(97,18); printf("  %c  |  %c  |  %c \n", square[1][0], square[1][1], square[1][2]);
+
+    gotoxy(97,19); printf("_____|_____|_____\n");
+    gotoxy(97,20); printf("     |     |     \n");
+
+    gotoxy(97,21); printf("  %c  |  %c  |  %c \n", square[2][0], square[2][1], square[2][2]);
+    gotoxy(97,22); printf("     |     |     \n\n");
+    
+    	gotoxy(94,32);
 	    printf(YELLOW "%c"RESET, press[0]);
 	    
-	    gotoxy(51,26);
+	    gotoxy(99,32);
 	    printf(GREEN "%c"RESET, press[1]);
 	    
-	    gotoxy(63,26);
+	    gotoxy(111,32);
 	    printf(RED "%c"RESET, press[2]);
 	    
-	    gotoxy(68,26);
+	    gotoxy(116,32);
 	    printf(CYAN "%c"RESET, press[3]);
 }
 
@@ -105,9 +109,9 @@ int arrow(char player1[10], char player2[10]){
  int chr1, chr2, player = 1;
  char mark;
  
- gotoxy(40,28);
+ gotoxy(35,10);
  printf("It's %s's turn", player1);
- gotoxy(40,30);
+ gotoxy(45,40);
  printf("Press any arrow key...Press ENTER to mark");
  
  
@@ -122,8 +126,9 @@ int arrow(char player1[10], char player2[10]){
  	 switch(chr2)
  	 {
  	    case UP_ARROW: i--;
- 	   	 if(i<0) i++;
- 	   	 press[i] = MARK;
+ 	    	BEEP
+ 	   	 	if(i<0) i++;
+ 	   	 	press[i] = MARK;
 			 if(square[i][j] == NULL){
 				 square[i][j] = MARK;
 				 board(player1, player2);
@@ -136,8 +141,9 @@ int arrow(char player1[10], char player2[10]){
 	       break;
 	       
 	    case DOWN_ARROW: i++; 
-	   	  if(i>2) i--;
-	   	  press[i] = MARK;
+	    	BEEP
+	   	  	if(i>2) i--;
+	   	 	 press[i] = MARK;
 	   	  	 if(square[i][j] == NULL){
 				 square[i][j] = MARK;
 				 board(player1, player2);
@@ -149,9 +155,10 @@ int arrow(char player1[10], char player2[10]){
 			press[i] = NULL;
 	       break;
 
-	    case LEFT_ARROW: j--; 
-	   	  if(j<0) j++; 
-	   	  press[i+j] = MARK;
+	    case LEFT_ARROW: j--;
+			BEEP 
+	   	  	if(j<0) j++; 
+	   	  	press[i+j] = MARK;
 	   	  	 if(square[i][j] == NULL){
 				 square[i][j] = MARK;
 				 board(player1, player2);
@@ -161,12 +168,13 @@ int arrow(char player1[10], char player2[10]){
 
 			 	board(player1, player2);
 			 }
-			 press[i] = NULL;
+			 press[i+j] = NULL;
  	       break;
  	       
  	    case RIGHT_ARROW: j++;
- 	  	  if(j>2) j--; 
- 	  	  	press[j-i] = MARK;
+ 	    	BEEP
+ 	  	  	if(j>2) j--; 
+ 	  	  	press[2-j] = MARK;
  	  	  	 if(square[i][j] == NULL){
 				 square[i][j] = MARK;
 				 board(player1, player2);
@@ -175,35 +183,40 @@ int arrow(char player1[10], char player2[10]){
 			 else{
 			 	board(player1, player2);
 			 }
-			 press[i] = NULL;
+			 press[2-j] = NULL;
 	        break;
 	        
 	    case ENTER:
+	    	CHOOSE
 	    	press[3] = MARK;
 	    	if(square[i][j] == 'X'||square[i][j] == 'O'){
-				if(player % 2 ==1){
-					gotoxy(40,28);
+				if(player % 2 == 1){
+					gotoxy(35,15);
 					printf("%s made an invalid move       ", player1);
 					}
 				else {
-					gotoxy(40,28);
-					printf("%s made an invalid move        ", player2); 
+					gotoxy(145,15);
+					printf("%s made an invalid move        ", player2);
 					}
 	    		player--;
+	    		
 			}
 	    	else{
 				mark = (player % 2 == 1) ? 'X' : 'O'; 
 				square[i][j] = mark;
 				board(player1, player2);
 				if(player % 2 ==1){
-					gotoxy(40,28);
-					printf("It's %s's turn              \n\n", player2);
+					gotoxy(145,10); printf("It's %s's turn              \n\n", player2);
+					gotoxy(35,10); printf("                                ");
+					gotoxy(35, 15); printf("                                ");
 					}
 				else {
-					gotoxy(40,28);
-					printf("It's %s's turn              \n\n", player1); 
+					gotoxy(35,10); printf("It's %s's turn              \n\n", player1); 
+					gotoxy(145,10); printf("                                    ");
+					gotoxy(145,15); printf("                               "); 
 					}
 			}
+			
 			player++;
 			press[3] = NULL;
 			checkwin(square,player1,player2);
