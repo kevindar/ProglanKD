@@ -2,7 +2,7 @@
 Proyek mini Tic Tac Toe oleh Kevin Darmawan (1806148744) dan Farhan Almasyhur (1806200375). Pada proyek ini sudah menggunakan array2d, file processing, dan sound processing.
 
 ## main function
-disini memunculkan splashscreen, dan menginput nama pemain 
+function main ini berfungsi untuk membuat layar menjadi fullscreen dan memulai game dengan splashscreen
 ```bash
  	fullscreen();	//mengubah windows ke full screen
 	hidecursor();	//menghilangkan cursor
@@ -139,7 +139,8 @@ void checkwin(char square[3][3],char player1[10],char player2[10]){
 	}
 ```
 
-## sound processing (beep.h)
+## File and Sound Processing
+### Sound Processing (pada header Beep.h)
 Pada proyek ini, digunakan sound processing ketika splahscreen, dan jika salah satu pemain menang, code yang digunakan yaitu :
 ```bash
 #define BEEP Beep(500,85);
@@ -187,4 +188,134 @@ void splashSong(){
 	Beep(440, 500); FORTH Beep(391, 500); F4 G4 Beep(440, 400); Beep(391, 400); F4
 }
 ```
+### File Processing (Pada file splash.h)
+File processing digunakan untuk membuat animasi pada saat splashscreen
+```bash
+#define BEEP Beep(500,85);
 
+void splashscreen(){
+	int i, a=0;
+	char *filename;
+    char str[MAXCHAR];
+    FILE *fp;
+    
+    /*Splash screen ini menampilkan animasi permainan tictactoe
+	Metode yang digunakan adalah menggunakan file pointer txt dan menimpa file sehingga
+	terlihat seperti animasi stop motion*/
+    
+	    fp=fopen("1.txt", "r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    BEEP
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf("%s", str);
+	
+	    Sleep(600);
+		
+		
+		gotoxy(0,0);
+	    fp=fopen("2.txt","r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    BEEP
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf("%s", str);
+	
+	    Sleep(600);
+		
+		
+		gotoxy(0,0);
+	    fp=fopen("3.txt","r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    BEEP
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf("%s", str);
+	
+	    Sleep(600);
+
+		
+		gotoxy(0,0);
+		fp=fopen("4.txt","r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    BEEP
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf("%s", str);
+	
+	    Sleep(600);
+		
+		
+		gotoxy(0,0);
+		fp=fopen("5.txt","r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    BEEP
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf("%s", str);
+	
+	    Sleep(600);
+
+
+		gotoxy(0,0);
+		fp=fopen("6.txt","r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    BEEP
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf("%s", str);
+	
+	    Sleep(600);
+
+
+		gotoxy(0,0);
+		fp=fopen("7.txt","r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    BEEP
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf("%s", str);
+	
+	    sleep(1);
+		system("cls");
+		
+		fp=fopen("8.txt","r");
+	    if (fp == NULL){
+	        printf("Could not open file");
+	        return 1;
+	    }
+	    while (fgets(str, MAXCHAR, fp) != NULL)
+	        printf(YELLOW"%s"RESET, str);
+	    gotoxy(82, 24);
+	    printf("KEVIN & FARHAN PRODUCTION");
+	    
+	    //mengecek jika ada interrupt keyboard, maka langsung ke menu game
+		while(!kbhit()){
+			gotoxy(84,27); 
+			printf("Press ENTER to START");
+			Sleep(600);
+			gotoxy(84,27);
+			printf("                      ");
+			Sleep(600);
+			}
+		
+	
+	fclose(fp);
+	system("cls");
+	game();
+}
+```
