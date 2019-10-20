@@ -1,6 +1,7 @@
 #ifndef CHECKWIN_H_
 #define CHECKWIN_H_
 
+//header fungsi pengecekan pemenang tic tac toe 4*4
 void checkwin(char square[3][3],char player1[10],char player2[10]){
 	if(square[0][0]==square[0][1] && square[0][1] == square[0][2] && square[0][0] != NULL){
 		if(square[0][0]=='X'){
@@ -14,8 +15,32 @@ void checkwin(char square[3][3],char player1[10],char player2[10]){
 			win2(player2);
 		}
 	}
+	else if(square[0][1]==square[0][2]&&square[0][2] == square[0][3] && square[0][1] != NULL){
+		if(square[0][1]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
 	else if(square[1][0]==square[1][1]&&square[1][1] == square[1][2] && square[1][0] != NULL){
 		if(square[1][0]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[1][1]==square[1][2]&&square[1][2] == square[1][3] && square[1][1] != NULL){
+		if(square[1][1]=='X'){
 			Sleep(1000);
 			system("cls");
 			win1(player1);
@@ -38,8 +63,56 @@ void checkwin(char square[3][3],char player1[10],char player2[10]){
 			win2(player2);
 		}
 	}
+	else if(square[2][1]==square[2][2]&&square[2][2] == square[2][3] && square[2][1] != NULL){
+		if(square[2][1]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[3][0]==square[3][1]&&square[3][1] == square[3][2] && square[3][0] != NULL){
+		if(square[3][0]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[3][1]==square[3][2]&&square[3][2] == square[3][3] && square[3][1] != NULL){
+		if(square[3][1]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
 	else if(square[0][0]==square[1][0]&&square[1][0] == square[2][0] && square[0][0] != NULL){
 		if(square[0][0]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[1][0]==square[2][0]&&square[2][0] == square[3][0] && square[1][0] != NULL){
+		if(square[1][0]=='X'){
 			Sleep(1000);
 			system("cls");
 			win1(player1);
@@ -62,8 +135,56 @@ void checkwin(char square[3][3],char player1[10],char player2[10]){
 			win2(player2);
 		}
 	}
+	else if(square[1][1]==square[2][1]&&square[2][1] == square[3][1] && square[1][1] != NULL){
+		if(square[1][1]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
 	else if(square[0][2]==square[1][2]&&square[1][2] == square[2][2] && square[0][2] != NULL){
 		if(square[0][2]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[1][2]==square[2][2]&&square[2][2] == square[3][2] && square[1][2] != NULL){
+		if(square[1][2]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[0][3]==square[1][3]&&square[1][3] == square[2][3] && square[0][3] != NULL){
+		if(square[0][3]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[1][3]==square[2][3]&&square[2][3] == square[3][3] && square[1][3] != NULL){
+		if(square[1][3]=='X'){
 			Sleep(1000);
 			system("cls");
 			win1(player1);	
@@ -86,6 +207,42 @@ void checkwin(char square[3][3],char player1[10],char player2[10]){
 			win2(player2);
 		}
 	}
+	else if(square[1][1]==square[2][2]&&square[2][2] == square[3][3] && square[1][1] != NULL){
+		if(square[1][1]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[1][0]==square[2][1]&&square[2][1] == square[3][2] && square[1][0] != NULL){
+		if(square[1][0]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[0][1]==square[1][2]&&square[1][2] == square[2][3] && square[0][1] != NULL){
+		if(square[0][1]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
 	else if(square[0][2]==square[1][1]&&square[1][1] == square[2][0] && square[0][2] != NULL){
 		if(square[0][2]=='X'){
 			Sleep(1000);
@@ -98,7 +255,43 @@ void checkwin(char square[3][3],char player1[10],char player2[10]){
 			win2(player2);
 		}
 	}
-	 else if (square[0][0] != NULL && square[0][1] != NULL &&square[0][2] != NULL &&square[1][0] != NULL &&square[1][1] != NULL &&square[1][2] != NULL &&square[2][0] != NULL &&square[2][1] != NULL &&square[2][2] != NULL){
+	else if(square[0][3]==square[1][2]&&square[1][2] == square[2][1] && square[0][3] != NULL){
+		if(square[0][3]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[1][2]==square[2][1]&&square[2][1] == square[3][0] && square[1][2] != NULL){
+		if(square[1][2]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	else if(square[1][3]==square[2][2]&&square[2][2] == square[3][1] && square[1][3] != NULL){
+		if(square[1][3]=='X'){
+			Sleep(1000);
+			system("cls");
+			win1(player1);	
+		}
+		else{
+			Sleep(1000);
+			system("cls");
+			win2(player2);
+		}
+	}
+	 else if (square[0][0] != NULL && square[0][1] != NULL &&square[0][2] != NULL &&square[1][0] != NULL &&square[1][1] != NULL &&square[1][2] != NULL &&square[2][0] != NULL &&square[2][1] != NULL &&square[2][2] != NULL &&square[0][3] != NULL &&square[1][3] != NULL &&square[2][3] != NULL &&square[3][3] != NULL &&square[3][2] != NULL &&square[3][1] != NULL &&square[3][0] != NULL ){
   			Sleep(1000);
 			system("cls");
   			draw();
@@ -124,6 +317,8 @@ void draw(){
 	    
 }
 
+//menampilkan animasi piala untuk pemenang permainan
+//atau draw jika berakhir seri
 void win1(char player1[10]){
 	char str[MAXCHAR];
     FILE *fp;

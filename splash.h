@@ -33,6 +33,9 @@ void splashscreen(){
     char str[MAXCHAR];
     FILE *fp;
     
+    /*Splash screen ini menampilkan animasi permainan tictactoe
+	Metode yang digunakan adalah menggunakan file pointer txt dan menimpa file sehingga
+	terlihat seperti animasi stop motion*/
     
 	    fp=fopen("1.txt", "r");
 	    if (fp == NULL){
@@ -134,7 +137,7 @@ void splashscreen(){
 	    gotoxy(82, 24);
 	    printf("KEVIN & FARHAN PRODUCTION");
 	    
-		splashSong();
+	    //mengecek jika ada interrupt keyboard, maka langsung ke menu game
 		while(!kbhit()){
 			gotoxy(84,27); 
 			printf("Press ENTER to START");
@@ -143,6 +146,7 @@ void splashscreen(){
 			printf("                      ");
 			Sleep(600);
 			}
+		
 	
 	fclose(fp);
 	system("cls");

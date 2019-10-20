@@ -8,12 +8,12 @@
 #define Ces4 Beep(277,220);
 #define D4 Beep(293,220);
 #define Des4 Beep(311,220);
-#define E4 Beep(330,170);
-#define F4 Beep(350,170);
+#define E4 Beep(330,100);
+#define F4 Beep(350,100);
 #define Fes4 Beep(370,220);
 #define G4 Beep(391,220);
 #define Ges4 Beep(415,220);
-#define A4 Beep(440,220);
+#define A4 Beep(440,100);
 #define Aes4 Beep(466,220);
 #define B4 Beep(494,220);
 
@@ -42,8 +42,8 @@ void winSong(){
 }
 
 void splashSong(){
-	C4 FORTH Beep(350,400); F4 F4 FORTH G4 FORTH Beep(440, 400); A4 A4 
-	A4 FORTH Beep(391, 400); F4 G4 Beep(440, 400); Beep(391, 400); F4
+	C4 FORTH Beep(350,600); F4 F4 HALF G4 FORTH Beep(440, 500); A4 A4 HALF
+	Beep(440, 500); FORTH Beep(391, 500); F4 G4 Beep(440, 400); Beep(391, 400); F4
 }
 
 #endif

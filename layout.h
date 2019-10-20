@@ -12,6 +12,7 @@
 #define CYAN   			 "\x1b[36m"
 #define RESET   		 "\x1b[0m"
 
+//mengatur window
 void fullscreen()
 {
     CONSOLE_SCREEN_BUFFER_INFOEX info = {0};
@@ -27,6 +28,7 @@ void fullscreen()
     GetConsoleScreenBufferInfoEx(hConsole, &info);
 }
 
+//mengatur cursor
 void hidecursor()
 {
    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
