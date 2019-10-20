@@ -4,37 +4,47 @@ Proyek mini Tic Tac Toe oleh Kevin Darmawan (1806148744) dan Farhan Almasyhur (1
 ## main function
 disini memunculkan splashscreen, dan menginput nama pemain 
 ```bash
-  hidecursor();
-	splashscreen();
-	showcursor();
-	
-	char player1[10];
-	char player2[10];
-	
-	gotoxy(45,5); printf("Enter Player 1 name: ");
-	scanf("%s", player1);
-	gotoxy(45,6); printf("Enter Player 2 name: ");
-	scanf("%s", player2);
-	system("cls");
-	board(player1, player2);
-	arrow(player1, player2);
+ 	fullscreen();	//mengubah windows ke full screen
+	hidecursor();	//menghilangkan cursor
+	splashscreen(); //memulai game dengan splash screen
 ```
 
 ### board()
 memunculkan layout dari tictactoe 4x4
 ```bash
-	gotoxy(54,5); printf("Tic Tac Toe");
-	gotoxy(47,6); printf("Permainan Jadul Sejak 1884");
-	gotoxy(50,8); printf("%s (O) vs %s (X)", player1, player2);
-	gotoxy(50,10); printf("     |     |     \n");
-  gotoxy(50,11); printf("  %c  |  %c  |  %c \n", square[0][0], square[0][1], square[0][2]);
-  gotoxy(50,12); printf("_____|_____|_____\n");
-  gotoxy(50,13); printf("     |     |     \n");
-  gotoxy(50,14); printf("  %c  |  %c  |  %c \n", square[1][0], square[1][1], square[1][2]);
-  gotoxy(50,15); printf("_____|_____|_____\n");
-  gotoxy(50,16); printf("     |     |     \n");
-  gotoxy(50,17); printf("  %c  |  %c  |  %c \n", square[2][0], square[2][1], square[2][2]);
-  gotoxy(50,18); printf("     |     |     \n\n");
+int board(char player1[10], char player2[10]){
+	
+	gotoxy(98,10); printf("Tic Tac Toe");
+	gotoxy(93,11); printf("Permainan Jadul Sejak 1884");
+	gotoxy(102,27); printf("%s (X)", player1);
+	gotoxy(105, 28); printf("vs");
+	gotoxy(102,29); printf("%s (O)", player2);
+	
+	//Papan terdiri atas array multidimensi dengan tipe data char 
+	//ketika awal permainan, tiap array NULL
+
+	gotoxy(94,13); printf("     |     |     |     \n");
+ 	gotoxy(94,14); printf("  %c  |  %c  |  %c  |  %c \n", square[0][0], square[0][1], square[0][2], square[0][3]);
+  	gotoxy(94,15); printf("_____|_____|_____|_____\n");
+  	gotoxy(94,16); printf("     |     |     |     \n");
+    	gotoxy(94,17); printf("  %c  |  %c  |  %c  |  %c \n", square[1][0], square[1][1], square[1][2], square[1][3]);
+    	gotoxy(94,18); printf("_____|_____|_____|_____\n");
+ 	gotoxy(94,19); printf("     |     |     |     \n");
+	gotoxy(94,20); printf("  %c  |  %c  |  %c  |  %c \n", square[2][0], square[2][1], square[2][2], square[2][3]);
+	gotoxy(94,21); printf("_____|_____|_____|_____\n");
+  	gotoxy(94,22); printf("     |     |     |     \n");
+   	gotoxy(94,23); printf("  %c  |  %c  |  %c  |  %c \n", square[3][0], square[3][1], square[3][2], square[3][3]);
+   	gotoxy(94,24); printf("     |     |     |     \n\n");    
+    //tombol warna warni
+    	gotoxy(94,32);
+	    printf(YELLOW "%c"RESET, press[0]);
+	    gotoxy(99,32);
+	    printf(GREEN "%c"RESET, press[1]);
+	    gotoxy(111,32);
+	    printf(RED "%c"RESET, press[2]);
+	    gotoxy(116,32);
+	    printf(CYAN "%c"RESET, press[3]);
+}
 ```
 
 ### arrow()
