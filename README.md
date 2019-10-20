@@ -1,7 +1,7 @@
 # ProglanKD
 Proyek mini Tic Tac Toe oleh Kevin Darmawan dan Farhan Almasyhur
 
-##main function
+## main function
 disini memunculkan splashscreen, dan menginput nama pemain 
 ```bash
   hidecursor();
@@ -20,7 +20,7 @@ disini memunculkan splashscreen, dan menginput nama pemain
 	arrow(player1, player2);
 ```
 
-###board()
+### board()
 memunculkan layout dari tictactoe 4x4
 ```bash
 	gotoxy(54,5); printf("Tic Tac Toe");
@@ -37,7 +37,7 @@ memunculkan layout dari tictactoe 4x4
   gotoxy(50,18); printf("     |     |     \n\n");
 ```
 
-###arrow()
+### arrow()
 mengarahkan tempat dimana pemain akan mengisi X atau O
 ```bash
  int chr1, chr2, player = 1, a;
