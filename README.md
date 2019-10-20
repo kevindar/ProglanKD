@@ -1,5 +1,5 @@
 # ProglanKD
-Proyek mini Tic Tac Toe oleh Kevin Darmawan dan Farhan Almasyhur. Pada proyek ini sudah menggunakan array2d, file processing, dan sound processing.
+Proyek mini Tic Tac Toe oleh Kevin Darmawan (1806148744) dan Farhan Almasyhur (1806200375). Pada proyek ini sudah menggunakan array2d, file processing, dan sound processing.
 
 ## main function
 disini memunculkan splashscreen, dan menginput nama pemain 
